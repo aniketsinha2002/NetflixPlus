@@ -1,10 +1,15 @@
 ## NETFLIX GPT
+  
+ ![alt text](image-1.png) 
 
+
+ ## STEPS
  Create React App
  Configured TailwindCSS
  Header
  Login Form
-
+ Signup Form
+ 
  ## Features (PLANNING)
 - Browse Route after authentication (LOGGED IN) 
     - Header
