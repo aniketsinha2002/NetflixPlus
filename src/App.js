@@ -1,11 +1,6 @@
-import './index.css';
-
+import Body from './components/Body'
 function App() {
-  return (
-    <div className="App bg-black">
-      <h1 className='text-gray-50'>Hello</h1>
-    </div>
-  );
+  return (<Body/>);
 }
 
 export default App; 
