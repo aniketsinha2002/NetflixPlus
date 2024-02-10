@@ -4,11 +4,13 @@
 
 
  ## STEPS
- Create React App
- Configured TailwindCSS
- Header
- Login Form
- Signup Form
+    - Create React App
+    - Configured TailwindCSS
+    - Header
+    - Routing
+    - Login/SignIn Form
+    - Signup Form
+    - Form Validation (Regex) && Use Ref Hook
  
  ## Features (PLANNING)
 - Browse Route after authentication (LOGGED IN) 
