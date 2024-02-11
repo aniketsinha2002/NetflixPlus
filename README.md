@@ -14,6 +14,8 @@
     - Firebase Setup & Deploying our app to Production
     - Create SignUp user account && SignIn using Firebase
     - Push the USER info into Redux Store
+    - Implemented Signout
+    - Display Name
  
  ## Features (PLANNING)
 - Browse Route after authentication (LOGGED IN) 

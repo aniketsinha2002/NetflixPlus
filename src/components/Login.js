@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 import Validate from '../utils/Validate';
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/Firebase'
-import { useNavigate } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
 
 const Login = () => {
 
@@ -14,7 +16,7 @@ const Login = () => {
   const email = useRef(null)
   const password = useRef(null)
 
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validateUser = () => {
     const message = Validate(email.current.value, password.current.value);
@@ -25,20 +27,29 @@ const Login = () => {
     //If validation check passes -> Sign In / Sign Up USER
     if (!isSignInForm) {
       //Sign Up Logic
-
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
         // user error -> Success
         // console.log(user)
-        navigate("/browse")
-      })
-      .catch((error) => {
+        //update user profile
+        updateProfile(auth.currentUser, {
+        displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+        }).then(() => {
+          // Profile updated!
+            const {uid, email, displayName, photoURL} = auth.currentUser;
+            //update my store
+            dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL:photoURL }))
+          }).catch((error) => {
+          // An error occurred
+          setErrorMessage(error.message)
+        });
+      }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setErrorMessage(errorCode + "-" + errorMessage);
-        // console.log(errorMessage)
+        setErrorMessage( errorCode);
+        //console.log(errorCode)
         // error
       });
     }
@@ -49,13 +60,12 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse")
         })
         .catch((error) => {
-          // const errorCode = error.code;
-          // const errorMessage = error.message;
-          // console.log(errorCode)
-          setErrorMessage("Invalid Email or Password");
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode)
+          setErrorMessage(errorCode);
         });
     }
   }

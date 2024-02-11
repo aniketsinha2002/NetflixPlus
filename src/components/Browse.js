@@ -3,8 +3,8 @@ import Header from './Header'
 
 const Browse = () => {
   return (
-    <div>
-      <Header/>
+    <div className='flex flex-row'>
+      <Header />
     </div>
   )
 }
