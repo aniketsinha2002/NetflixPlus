@@ -8,7 +8,7 @@ const Validate = (email, password) => {
 
     // if (!nameCheck) return "Set proper name"
     if (!emailCheck) return "Email ID is Not Valid"
-    if (!passwordCheck) return "Set Proper Password"
+    if (!passwordCheck) return "Password is Not Valid"
 
     return null;
 }

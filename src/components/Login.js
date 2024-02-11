@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 import Validate from '../utils/Validate';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/Firebase'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -11,11 +14,50 @@ const Login = () => {
   const email = useRef(null)
   const password = useRef(null)
 
-  const validateUser = () => {
-    const isValidUser = Validate(email.current.value, password.current.value);
-    setErrorMessage(isValidUser);
+  const navigate = useNavigate();
 
-    //Sign In / Sign Up
+  const validateUser = () => {
+    const message = Validate(email.current.value, password.current.value);
+    setErrorMessage(message);
+
+    if (message) return; //If not valid program stops
+
+    //If validation check passes -> Sign In / Sign Up USER
+    if (!isSignInForm) {
+      //Sign Up Logic
+
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        // user error -> Success
+        // console.log(user)
+        navigate("/browse")
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErrorMessage(errorCode + "-" + errorMessage);
+        // console.log(errorMessage)
+        // error
+      });
+    }
+    else {
+      //Sign In
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/browse")
+        })
+        .catch((error) => {
+          // const errorCode = error.code;
+          // const errorMessage = error.message;
+          // console.log(errorCode)
+          setErrorMessage("Invalid Email or Password");
+        });
+    }
   }
 
   const handleSignin = () => {

@@ -11,6 +11,9 @@
     - Login/SignIn Form
     - Signup Form
     - Form Validation (Regex) && Use Ref Hook
+    - Firebase Setup & Deploying our app to Production
+    - Create SignUp user account && SignIn using Firebase
+    - Push the USER info into Redux Store
  
  ## Features (PLANNING)
 - Browse Route after authentication (LOGGED IN) 
