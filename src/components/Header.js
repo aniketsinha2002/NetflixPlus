@@ -41,16 +41,19 @@ const Header = () => {
   }, [])
   
   return (
-    <div className='flex absolute bg-gradient-to-b from-black z-10 w-screen justify-between'>
-      <img
-      className='w-36 m-2'  
+    <div className='flex justify-between px-6 md:px-20 w-screen py-2 absolute bg-gradient-to-b from-black z-10'>
+      <div>
+        <img
+      className='mx-auto m-2 w-44 cursor-pointer'  
         src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" />
+      </div>
+      
       
       {user && 
-        <div className='flex flex-row'>
+        <div className='flex items-center gap-4'>
           <p className='px-4 py-4 font-bold text-green-900'>Hello {user.displayName} !</p>
 
-          <button className='bg-red-700 m-2 py-2 px-4 rounded-md text-white' type="button" onClick={handleSignout}>Signout</button>
+          <button className='bg-red-700 text-white p-3 m-2 rounded-md hover:bg-red-800' type="button" onClick={handleSignout}>Signout</button>
         </div>
       }
     </div>
