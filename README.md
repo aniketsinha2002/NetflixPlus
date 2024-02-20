@@ -1,5 +1,6 @@
 ## NETFLIX GPT
 
+ <video controls src="React App.mp4" title="Title"></video>
  ![alt text](image-1.png) 
  ![alt text](image.png) 
  
@@ -40,6 +41,7 @@
     - Implemented Signout
     - Display Name
     - Get Data from TMDB api Lists
+    - Movie Trailer with Title and Description
 
  ## REACT - REDUX (A BRIEF UNDERSTANDING)
     $npm install --save redux react-redux

@@ -5,7 +5,7 @@ import SecondaryContainer from "./SecondaryContainer"
 const Browse = () => { 
   useNowPlayingMovies();
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-col'>
       <Header />
       {
         /*
