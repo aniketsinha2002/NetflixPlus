@@ -1,4 +1,4 @@
-## NETFLIX GPT
+## NETFLIX-PLUS
   
  DEMO LINK - https://www.awesomescreenshot.com/video/25102509?key=a3468d7a0d35f05ac2bb4c7090059371
  
@@ -23,7 +23,7 @@
         - redirect to Browse Page
 
 
- - NetflixGPT (GPT API)
+ - NetflixPlus (GPT API)
     - Search Bar
     - Movie Suggestions
 
