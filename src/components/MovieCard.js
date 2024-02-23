@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({posterPath,id}) => {
-  const IMG_CDN = "https://image.tmdb.org/t/p/w500/";
+  const IMG_CDN = "https://image.tmdb.org/t/p/w200/";
   console.log(IMG_CDN+posterPath)
   return (
     posterPath && (
-      <div className="w-40 md:w-56 cursor-pointer px-0">
+      <div className="w-40 md:w-48 cursor-pointer">
         <Link to={`/browse/${id}`}>
-          <img alt="Movie Card" src={IMG_CDN+posterPath} />
+          <img className='rounded-md' alt="Movie Card" src={IMG_CDN+posterPath} />
         </Link>
       </div>
     )
