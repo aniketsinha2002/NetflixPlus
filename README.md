@@ -43,6 +43,7 @@
     - Display Name
     - Get Data from TMDB api Lists
     - Movie Trailer with Title and Description
+    - Completed Browse page with dynamic movie sections
 
  ## REACT - REDUX (A BRIEF UNDERSTANDING)
     $npm install --save redux react-redux
