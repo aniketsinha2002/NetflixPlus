@@ -1,6 +1,7 @@
-## NETFLIX GPT
-
- <video controls src="React App.mp4" title="Title"></video>
+## NETFLIX-PLUS
+  
+ DEMO LINK - https://www.awesomescreenshot.com/video/25102509?key=a3468d7a0d35f05ac2bb4c7090059371
+ 
  ![alt text](image-1.png) 
  ![alt text](image.png) 
  
@@ -22,7 +23,7 @@
         - redirect to Browse Page
 
 
- - NetflixGPT (GPT API)
+ - NetflixPlus (GPT API)
     - Search Bar
     - Movie Suggestions
 
