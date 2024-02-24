@@ -1,6 +1,6 @@
 ## NETFLIX-PLUS
   
- DEMO LINK - https://www.awesomescreenshot.com/video/25102509?key=a3468d7a0d35f05ac2bb4c7090059371
+ DEMO LINK - https://www.loom.com/share/bf2cafe6cac34db99d80ef63d22a7669
  
  ![alt text](image-1.png) 
  ![alt text](image.png) 
@@ -44,6 +44,7 @@
     - Get Data from TMDB api Lists
     - Movie Trailer with Title and Description
     - Completed Browse page with dynamic movie sections
+    - GPT (Gemini) Search Feature
 
  ## REACT - REDUX (A BRIEF UNDERSTANDING)
     $npm install --save redux react-redux

@@ -4,8 +4,11 @@ import { auth, unsubscribe } from '../utils/Firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import { toggleGPTSearchView } from '../utils/gptSlice';
 
 const Header = () => {
+
+  const GptSearch = useSelector(store => store.gpt.showGptSearch)
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,6 +42,11 @@ const Header = () => {
      // unsubscribes when my header component unmount 
      return () => unsubscribe();
   }, [])
+
+  const handleGptSearchClick = () => {
+    //toggle my gpt search
+    dispatch(toggleGPTSearchView())
+  }
   
   return (
     <div className='flex justify-between px-6 md:px-20 w-screen py-2 absolute bg-gradient-to-b from-black z-10'>
@@ -51,7 +59,12 @@ const Header = () => {
       
       {user && 
         <div className='flex items-center gap-4'>
-          <p className='px-4 py-4 font-bold text-green-900'>Hello {user.displayName} !</p>
+          <p className='px-2 py-4 font-bold text-green-400 font-mono'>Hello {user.displayName} !</p>
+
+          
+          <button className='bg-purple-600 text-white p-3 m-2 rounded-md' onClick={handleGptSearchClick}>{
+            GptSearch ? "Home" : "Search"
+          }</button>
 
           <button className='bg-red-700 text-white p-3 m-2 rounded-md hover:bg-red-800' type="button" onClick={handleSignout}>Signout</button>
         </div>
