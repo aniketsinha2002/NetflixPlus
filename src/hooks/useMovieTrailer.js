@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TMDB_OPTIONS } from "../utils/constants";
+import { TMDB_MOVIE, TMDB_OPTIONS } from "../utils/constants";
 import { addTrailerVideo, clearTrailerVideo } from "../utils/movieSlice";
 
 const useMovieTrailer = (id) => {
@@ -15,12 +15,11 @@ const useMovieTrailer = (id) => {
     }
 
     fetchMovieTrailer();
-    // eslint-disable-next-line
   }, []);
 
   const fetchMovieTrailer = async () => {
     try {
-      const data = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos`, TMDB_OPTIONS);
+      const data = await fetch( TMDB_MOVIE + id +`/videos`, TMDB_OPTIONS);
       const json = await data.json();
 
       if (json.results && Array.isArray(json.results) && json.results.length > 0) {

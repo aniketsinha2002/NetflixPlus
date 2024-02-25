@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import genAI from "../utils/GeminiAPI";
-import { TMDB_OPTIONS } from '../utils/constants';
+import { GPT_PROMPT1, GPT_PROMPT2, MOVIE_DATA_API, MOVIE_DATA_API_OPTIONS, TMDB_OPTIONS } from '../utils/constants';
 import { useDispatch } from "react-redux";
 import { addGptMovieResult } from "../utils/gptSlice";
 
@@ -9,18 +9,15 @@ const GptSearchBar = () => {
     const dispatch = useDispatch();
  
     const getMovieSearchRecommendations = async (movieName) => {
-    const movieData = await fetch("https://api.themoviedb.org/3/search/movie?query="+movieName+"&include_adult=false&language=en-US&page=1",TMDB_OPTIONS);
+    const movieData = await fetch(MOVIE_DATA_API + movieName + MOVIE_DATA_API_OPTIONS, TMDB_OPTIONS);
     const json = await movieData.json();
     return json.results;
     };
     
     const handleGptSearchClick = async () => {
-        // MAKE AN API CALL TO GPT API and GET MOVIE RESULTS
+        // MAKING AN API CALL TO GPT API and GET MOVIE RESULTS
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-        const gptQuery =
-        "Act as a movie recommendation system and suggest movies for the query : " +
-        searchText.current.value +
-        ". Only give me names for 5 movies, comma separated like the example result given ahead. Example Result: Sholay, Andaz Apna Apna, Hera Pheri, Padosan, Chupke";
+        const gptQuery = GPT_PROMPT1 + searchText.current.value + GPT_PROMPT2;
         
         const gptResults = await model.generateContent(gptQuery);
         const response = gptResults.response.text();

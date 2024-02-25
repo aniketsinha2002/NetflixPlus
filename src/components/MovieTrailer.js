@@ -2,12 +2,11 @@ import React from "react";
 import useMovieTrailer from "../hooks/useMovieTrailer";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { MOVIE_TRAILER } from "../utils/constants";
 
 const MovieTrailer = () => {
   const { id } = useParams();
-
   const movieTrailer = useSelector((store) => store.movies.trailerVideo);
-
   useMovieTrailer(id);
 
   return (
@@ -16,7 +15,7 @@ const MovieTrailer = () => {
         <div className="aspect-w-16 aspect-h-9">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src={`https://www.youtube.com/embed/${movieTrailer?.key}`}
+             src={MOVIE_TRAILER + movieTrailer?.key}
             title="YouTube video player"
             allowFullScreen
           ></iframe>

@@ -6,6 +6,7 @@ import { auth } from '../utils/Firebase'
 
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BG_IMG } from '../utils/constants';
 
 const Login = () => {
 
@@ -35,7 +36,7 @@ const Login = () => {
         // console.log(user)
         //update user profile
         updateProfile(auth.currentUser, {
-        displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+        displayName: name.current.value, photoURL: ""
         }).then(() => {
           // Profile updated!
             const {uid, email, displayName, photoURL} = auth.currentUser;
@@ -77,28 +78,29 @@ const Login = () => {
       <Header />
       <div className='absolute'>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BG_IMG}
           alt="bgImage"
           className="h-screen object-cover md:w-screen md:h-screen"
         />
       </div>
-      
-      <form onSubmit={e=>e.preventDefault()} className='w-full md:w-3/12 p-4 md:p-10 bg-opacity-85 absolute text-white my-20 md:my-28 mx-auto right-0 left-0 bg-black rounded-lg' action="">
-          
-          <h1 className='font-bold text-4xl py-6'>{isSignInForm? "Sign In" : "Sign Up"}</h1>
-          
-          {!isSignInForm && <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="text" placeholder='Name' ref={name}/>}
+      {/*normal - mobile, sm - tab , md - desktop*/}
+    <form onSubmit={e => e.preventDefault()} className='w-8/12 sm:w-4/12 md:w-5/12 p-4 md:p-10 bg-opacity-85 absolute text-white my-20 mx-auto right-0 left-0 bg-black rounded-lg'>
 
-          <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="text" placeholder='Email' ref={email}/>
-          
-          <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="password" placeholder='Password' ref={password}/>
-          
-          <p className='text-[#E50914] py-2 px-2'>{errorMessage}</p>
-          
-          <button className='p-3 my-3 bg-[#E50914] w-full rounded-md font-bold' type="button" onClick={validateUser}>{isSignInForm? "Sign In" : "Sign Up"}</button>
-          
-          <p onClick={handleSignin} className='py-4 cursor-pointer'>{isSignInForm?"New to Netflix? Signup Now" : "Already an user? Signin Now"}</p>
-      </form>
+        <h1 className='font-bold text-4xl py-6'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+
+        {!isSignInForm && <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="text" placeholder='Name' ref={name} />}
+
+        <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="text" placeholder='Email' ref={email} />
+
+        <input className='p-3 my-2 w-full bg-gray-700 rounded-md border-solid border-white border-2 placeholder:text-white' type="password" placeholder='Password' ref={password} />
+
+        <p className='text-[#E50914] py-2 px-2'>{errorMessage}</p>
+
+        <button className='p-3 my-3 bg-[#E50914] w-full rounded-md font-bold' type="button" onClick={validateUser}>{isSignInForm ? "Sign In" : "Sign Up"}</button>
+
+        <p onClick={handleSignin} className='py-4 cursor-pointer'>{isSignInForm ? "New to Netflix? Signup Now" : "Already an user? Signin Now"}</p>
+    </form>
+
 
     </div>
   )

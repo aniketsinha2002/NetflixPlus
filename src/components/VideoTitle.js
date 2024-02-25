@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const VideoTitle = ({title, description, id}) => {
   return (
-    <div className="w-screen aspect-video pt-[30%] md:pt-[15%] px-6 md:px-24 absolute text-white bg-gradient-to-r from-black">
-      <h1 className="font-semibold md:font-bold text-2xl py-4 md:py-0 md:text-4xl">
+    <div className="w-screen aspect-video pt-[20%] md:pt-[15%] px-6 md:px-24 absolute text-white bg-gradient-to-r from-black">
+      <h1 className="font-semibold md:font-bold text-xl py-4 md:py-0 md:text-4xl">
         {title}
       </h1>
       <p className="hidden md:inline-block md:text-lg md:w-1/3 md:py-6">

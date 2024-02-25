@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { toggleGPTSearchView } from '../utils/gptSlice';
+import { LOGO } from '../utils/constants';
 
 const Header = () => {
 
@@ -51,22 +52,21 @@ const Header = () => {
   return (
     <div className='flex justify-between px-6 md:px-20 w-screen py-2 absolute bg-gradient-to-b from-black z-10'>
       <div>
-        <img
-      className='mx-auto m-2 w-44 cursor-pointer'  
-        src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" />
+        <img className='w-24 sm:w-44 md:w-44  mx-auto m-2 cursor-pointer'  
+        src={LOGO} alt="" />
       </div>
       
       
       {user && 
-        <div className='flex items-center gap-4'>
-          <p className='px-2 py-4 font-bold text-green-400 font-mono'>Hello {user.displayName} !</p>
+        <div className='flex items-center gap-1 md:gap-4'>
+          <p className='text-xs md:text-lg md:px-2 md:py-4 font-bold text-green-400'>Hello {user.displayName}!</p>
 
           
-          <button className='bg-purple-600 text-white p-3 m-2 rounded-md' onClick={handleGptSearchClick}>{
+          <button className=' bg-purple-600 text-white text-sm md:text-xl p-[4px] md:p-3 md:m-2 rounded-md' onClick={handleGptSearchClick}>{
             GptSearch ? "Home" : "Search"
           }</button>
 
-          <button className='bg-red-700 text-white p-3 m-2 rounded-md hover:bg-red-800' type="button" onClick={handleSignout}>Signout</button>
+          <button className='bg-red-700 text-white text-sm md:text-xl p-[4px] md:p-3 md:m-2 rounded-md hover:bg-red-800' type="button" onClick={handleSignout}>Signout</button>
         </div>
       }
     </div>
