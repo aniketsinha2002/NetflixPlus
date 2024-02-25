@@ -45,6 +45,7 @@
     - Movie Trailer with Title and Description
     - Completed Browse page with dynamic movie sections
     - GPT (Gemini) Search Feature
+    - normal - mobile , sm- tab, md - desktop
 
  ## REACT - REDUX (A BRIEF UNDERSTANDING)
     $npm install --save redux react-redux
