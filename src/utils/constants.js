@@ -24,3 +24,9 @@ export const TMDB_OPTIONS = {
     Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY
   }
 };
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "spanish", name: "Spanish" }
+];
