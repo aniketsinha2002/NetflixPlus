@@ -1,9 +1,6 @@
-## NETFLIX-PLUS
+## NETFLIX-PLUS (GO THROUGH WHOLE README TO UNDERSTAND THE PROJECT PROPERLY)
 
 [SEE VIDEO DEMO HERE ](https://www.loom.com/share/bf2cafe6cac34db99d80ef63d22a7669)
-
-![alt text](image-1.png)
-![alt text](image.png)
 
 ## LIVE LINK WON'T WORK (SOMETIMES) ⚠️⚠️
 
