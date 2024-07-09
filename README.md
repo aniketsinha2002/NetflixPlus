@@ -23,10 +23,10 @@ After implementing various optimization strategies, a detailed performance repor
 
 ### Achieved Results: ⭐
 
-- **First Contentful Paint (FCP):** 0.2 seconds  
+- **First Contentful Paint (FCP):** 0.2s
   FCP measures the time it takes for the browser to render the first piece of content from the DOM.
 
-- **Largest Contentful Paint (LCP):** 1.1 seconds  
+- **Largest Contentful Paint (LCP):** 1.1s  
   LCP measures the time it takes for the browser to render the largest content element on the page.
 
 - **Total Blocking Time (TBT):** 0 ms  
@@ -34,6 +34,9 @@ After implementing various optimization strategies, a detailed performance repor
 
 - **Cumulative Layout Shift (CLS):** 0  
   CLS measures the sum of all unexpected layout shifts of visible elements during page load.
+
+- **Speed Index:** 1.9s
+  Speed Index shows how quickly the contents of a page are visibly populated.
 
 ### Implemented Strategies:
 
