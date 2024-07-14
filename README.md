@@ -4,10 +4,19 @@
 
 ## LIVE LINK WON'T WORK (SOMETIMES) ⚠️⚠️
 
-My project uses the Gemini API and TMDb API, so it might occasionally face issues due to:
+The website might give you this error (see screenshort below). I have reported it to Google for being marked this website as phishing, and I hope it gets updated soon. Meanwhile, you can still visit the website by clicking the 'Details' button and then clicking on 'Visit this unsafe site' to proceed.
+
+![alt text](<Screenshot 2024-07-15 003653.png>)
+
+Also, my project uses the Gemini API and TMDb API, so it might occasionally face issues due to:
 
 - **Gemini API Limitation:** There is a daily limit on the number of fetch requests.
-- **TMDb API Downtime:** The TMDb API server is often down in India.
+- **TMDb API Downtime:** The TMDb API server is often down in India. (Quick Solve -> using VPN)
+
+## FOR LOGGING PURPOSE ⭐
+
+**Email : testuser@gmail.com**
+**Password: Test1234**
 
 ## WEB PERFOMANCE AND OPTIMIZATION 😮😮
 
