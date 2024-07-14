@@ -56,6 +56,8 @@ After implementing various optimization strategies, a detailed performance repor
 - **Efficient JSX Rendering:** Rendered components conditionally based on data, reducing unnecessary load on the browser.
 - **Checked Critical Rendering Path (CRP) Concepts:** Ensured no render-blocking CSS or parser-blocking JavaScript was used, and removed unused or duplicate CSS.
 
+![PREVIEW OF WEBSITE](image-1.png)
+
 ## Features (PLANNING)
 
 - Browse Route after authentication (LOGGED IN)
